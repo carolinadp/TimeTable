@@ -4,8 +4,17 @@
              xmlns:local="clr-namespace:TimeTable"
              x:Class="TimeTable.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
 
+    <ListView x:Name="lst" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout BackgroundColor="Green" Padding="5, 20" Orientation="Vertical">
+                        <Label Text="{Binding Name}" Font="18"></Label>
+                        <Label Text="{Binding Place}" TextColor="Gray"></Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

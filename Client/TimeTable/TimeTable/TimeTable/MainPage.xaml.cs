@@ -12,6 +12,35 @@ namespace TimeTable
 		public MainPage()
 		{
 			InitializeComponent();
+
+            lst.ItemsSource = new List<Subject>()
+            {
+                new Subject()
+                {
+                    Name = "Calculo", Place = "A12",
+                },
+                new Subject()
+                {
+                    Name = "Programacion", Place = "D03",
+                },
+            };
+            /*
+            lst2.ItemsSource = new List<Subject>()
+            {
+                new Subject()
+                {
+                    Name = "Diseño", Place = "A15",
+                },
+                new Subject()
+                {
+                    Name = "Programacion", Place = "D03",
+                },
+                new Subject()
+                {
+                    Name = "BigData", Place = "C02",
+                },
+            };
+            */
 		}
 	}
 }
