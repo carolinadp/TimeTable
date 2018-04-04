@@ -13,7 +13,7 @@ namespace TimeTable
 		{
 			InitializeComponent();
 
-			MainPage = new TimeTable.MainPage();
+			MainPage = new TimeTable.WeekPage();
 		}
 
 		protected override void OnStart ()
