@@ -2,19 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TimeTable"
-             x:Class="TimeTable.MainPage">
-
-
-    <ListView x:Name="lst" HasUnevenRows="True">
-        <ListView.ItemTemplate>
+             x:Class="TimeTable.MainPage"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
+    <cv:CarouselViewControl x:Name="carousel">
+        <cv:CarouselViewControl.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <StackLayout BackgroundColor="Green" Padding="5, 20" Orientation="Vertical">
+                <ContentView>
+                    <StackLayout Orientation="Vertical">
                         <Label Text="{Binding Name}" Font="18"></Label>
-                        <Label Text="{Binding Place}" TextColor="Gray"></Label>
+                        <ListView 
+                        HasUnevenRows="True"
+                        ItemsSource="{Binding Sessions}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout BackgroundColor="Green" Padding="5, 20" Orientation="Vertical">
+                                            <Label Text="{Binding Subject.Name}" Font="18"></Label>
+                                            <Label Text="{Binding Subject.Place}" TextColor="Gray"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackLayout>
-                </ViewCell>
+                </ContentView>
             </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+        </cv:CarouselViewControl.ItemTemplate>
+    </cv:CarouselViewControl>
+
 </ContentPage>

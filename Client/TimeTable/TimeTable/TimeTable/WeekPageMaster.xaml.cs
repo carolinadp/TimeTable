@@ -33,7 +33,7 @@ namespace TimeTable
             {
                 MenuItems = new ObservableCollection<WeekPageMenuItem>(new[]
                 {
-                    new WeekPageMenuItem { Id = 0, Title = "Page 1" },
+                    new WeekPageMenuItem { Id = 0, Title = "Horario", TargetType = typeof(MainPage)},
                     new WeekPageMenuItem { Id = 1, Title = "Page 2" },
                     new WeekPageMenuItem { Id = 2, Title = "Page 3" },
                     new WeekPageMenuItem { Id = 3, Title = "Page 4" },
