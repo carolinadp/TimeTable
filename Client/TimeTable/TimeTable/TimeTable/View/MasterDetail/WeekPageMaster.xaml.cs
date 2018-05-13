@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using TimeTable.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,10 +34,10 @@ namespace TimeTable
                 MenuItems = new ObservableCollection<WeekPageMenuItem>(new[]
                 {
                     new WeekPageMenuItem { Id = 0, Title = "Horario", TargetType = typeof(MainPage)},
-                    new WeekPageMenuItem { Id = 1, Title = "Page 2" },
-                    new WeekPageMenuItem { Id = 2, Title = "Page 3" },
-                    new WeekPageMenuItem { Id = 3, Title = "Page 4" },
-                    new WeekPageMenuItem { Id = 4, Title = "Page 5" },
+                    new WeekPageMenuItem { Id = 1, Title = "Nueva Clase" },
+                    new WeekPageMenuItem { Id = 2, Title = "Nueva Tarea", TargetType = typeof(NewTaskPage) },
+                    new WeekPageMenuItem { Id = 3, Title = "Tareas" },
+                    new WeekPageMenuItem { Id = 4, Title = "Clase" },
                 });
             }
             
