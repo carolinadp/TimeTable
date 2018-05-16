@@ -4,14 +4,19 @@
              x:Class="TimeTable.View.NewTaskPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Entry Placeholder="Nombre"></Entry>
-            <Entry Placeholder="Fecha de entrega"></Entry>
-            <DatePicker></DatePicker>
-            <Editor></Editor>
-            <Button Text="Guardar"></Button>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label>Nombre</Label>
+                <Entry x:Name="NameEntry" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label>Fecha de entrega</Label>
+                <DatePicker x:Name="DueDatePicker" HorizontalOptions="FillAndExpand"></DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <Label>Notas</Label>
+                <Editor x:Name="NotesEditor" VerticalOptions="FillAndExpand"></Editor>
+            </StackLayout>
+            <Button Text="Guardar" x:Name="SaveButton" Clicked="SaveButton_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
