@@ -10,7 +10,7 @@ namespace TimeTable
         public string Teacher { get; set; }
         public string Place { get; set; }
 
-        private Guid Id;
+        public int Id { get; private set; }
 
     }
 }
