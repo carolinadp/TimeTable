@@ -5,12 +5,9 @@ using SQLite;
 
 namespace TimeTable
 {
-    [Table("Sessions")]
     public class Session
     {
-        [MaxLength(50)]
         public Subject Subject { get; set; }
-        []
         public Int64 StartTicks { get; set; }
         public Int64 EndTicks { get; set; }
 
