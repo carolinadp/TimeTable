@@ -6,10 +6,11 @@ using SQLite;
 
 namespace TimeTable.Data
 {
-    public abstract class DbLocal
+    public class DbLocal
     {
         protected string dbPath;
-        protected SQLiteConnection db;
+        public SQLiteConnection db;
+        protected static DbLocal instance;
         protected DbLocal()
         {
             dbPath = Path.Combine(
@@ -17,5 +18,15 @@ namespace TimeTable.Data
                 "timetable.db3");
             db = new SQLiteConnection(dbPath);
         }
+
+        public static DbLocal GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new DbLocal();
+            }
+            return instance;
+        }
+
     }
 }

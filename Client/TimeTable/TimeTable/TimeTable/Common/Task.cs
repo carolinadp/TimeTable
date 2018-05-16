@@ -7,13 +7,19 @@ namespace TimeTable.Common
     [Table("Tasks")]
     public class Task
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey, AutoIncrement, NotNull]
+        public Int32 Id { get; set; }
         [MaxLength(100)]
-        public string Name { get; set; }
-        public long DueDateTicks { get; set; }
-        public int SubjectId { get; set; }
+        public String Name { get; set; }
+        public Int64 DueDateTicks { get; set; }
+        public Int32 SubjectId { get; set; }
         [MaxLength(500)]
-        public string Notes { get; set; }
+        public String Notes { get; set; }
+
+        public Task()
+        {
+
+        }
+
     }
 }

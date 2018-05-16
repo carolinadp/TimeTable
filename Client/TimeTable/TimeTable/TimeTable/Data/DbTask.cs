@@ -5,31 +5,31 @@ using TimeTable.Common;
 
 namespace TimeTable.Data
 {
-    public class DbTask : DbLocal
+    public class DbTask
     {
-        public DbTask() : base()
+        public DbTask()
         {
-            db.CreateTable<Task>();
+            DbLocal.GetInstance().db.CreateTable<Task>();
         }
 
         public Task Get(int id)
         {
-            return db.Get<Task>(id);
+            return DbLocal.GetInstance().db.Get<Task>(id);
         }
 
         public int Insert(Task t)
         {
-            return db.Insert(t);
+            return DbLocal.GetInstance().db.Insert(t);
         }
 
         public IEnumerable<Task> GetAll()
         {
-            return db.Table<Task>();
+            return DbLocal.GetInstance().db.Table<Task>();
         }
 
         public int Update(Task t)
         {
-            return db.Update(t);
+            return DbLocal.GetInstance().db.Update(t);
         }
 
     }
